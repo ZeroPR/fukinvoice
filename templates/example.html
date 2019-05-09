@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>FukInvoice</title>       
+
+        <style>
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: #008000;
+            }
+
+            body {
+                padding: 1rem;
+            }
+
+            .items {
+                display: grid;
+                grid-template-columns: repeat(4, 25%);
+                grid-column-gap: 1rem;
+
+                margin-top: 2rem;
+            }
+
+            .item {
+                padding: 2rem;
+                background-color: rgb(0, 128, 0);
+                color: rgb(255, 255, 255);
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
+        </style> 
+    </head>
+    <body>
+        <header>
+            <h1>{{greetings}}</h1>
+            <p>{{date}}></p>
+        </header>
+        
+    </body>
+</html>
