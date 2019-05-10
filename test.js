@@ -4,6 +4,7 @@ import fs from 'fs'
 
 // const template = './templates/conduce.ejs'
 const template = './templates/invoiceCredito.ejs'
+const css = {path:'./templates/ic.css'}
 const options = {
     format: 'A4',
     margin: {
@@ -169,7 +170,7 @@ const data = {
     mensaje: '¿Dime socio quien tu eres?'
 }
 
-printPDF(template, data, options)
+printPDF(template, css, data, options)
 .then(r => {
     console.log(r)
     process.exit()
