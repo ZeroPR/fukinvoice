@@ -11,7 +11,17 @@ const options = {
         left: '14px',
         right: '14px',
     },
-    path: path.resolve('pdf', 'example2.pdf')
+    path: path.resolve('pdf', 'example2.pdf'),
+    displayHeaderFooter: true,
+    footerTemplate: `
+        <html>
+        <body>
+            <div>
+                <span class="pageNumber"></span>
+            </div>
+        </body>
+        </html>    
+`
 }
 const data = {
     id: '32714',
