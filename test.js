@@ -1,8 +1,6 @@
 import printPDF from './index'
-import path from 'path';
-import fs from 'fs'
+import path from 'path'
 
-// const template = './templates/conduce.ejs'
 const template = './templates/invoiceCredito.ejs'
 const css = {path:'./templates/ic.css'}
 const options = {
@@ -16,18 +14,6 @@ const options = {
     path: path.resolve('pdf', 'example2.pdf')
 }
 const data = {
-    // greetings: 'Hola Mundo',
-    // date: '20/06/1993',
-    // items: [
-    //     {itemNumber: 1},
-    //     {itemNumber: 2},
-    //     {itemNumber: 3},
-    //     {itemNumber: 4},
-    //     {itemNumber: 5},
-    //     {itemNumber: 6},
-    //     {itemNumber: 7}
-    // ],
-
     id: '32714',
 
     conduce_id: '32714',
