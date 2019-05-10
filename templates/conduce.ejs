@@ -1,0 +1,318 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conduce</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 12px;
+        }
+
+        .conduce__header {
+            text-align: justify;
+            border-bottom: 1px solid black;
+            padding-bottom: 2em; 
+        }
+
+        .conduce__header:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        .header__logo,
+        .header__info {
+            display: inline-block;
+        }
+        
+        .header__logo {
+            width: 280px;
+            position: relative;
+            top: -25;
+        }       
+
+        .info--conduce-id,
+        .info--address {
+            margin-bottom: 1em; 
+        }
+
+        .conduce__info-cliente {
+            text-align: justify;
+            border-bottom: 1px solid black;
+            padding: 2em 0; 
+        }
+
+        .conduce__info-cliente:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        .info-cliente--direccion,
+        .info-cliente--contactos {
+            display: inline-block;
+        }
+
+        .info-cliente--direccion > b {
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+
+        .info-cliente--direccion > span {
+            display: inline-block;
+            margin-bottom: 1em; 
+            font-size: 14px;
+        }
+
+        .contactos--telefono,
+        .contactos--email {
+            position: relative;
+            top: -30;
+        }
+
+        .contactos--telefono {
+            margin-bottom: 1em;
+        }
+
+        .items__header {
+            text-align: justify;
+            border-bottom: 1px solid rgb(155, 155, 155);
+            padding: 2em 0 .4em 0; 
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .items__header:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        .header__left,
+        .header__right {
+            display: inline-block;
+        }
+
+        .header__left {
+            text-align: justify;
+            width: 46%
+        }
+
+        .header__left:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        .header__left--id,
+        .header__left--item {
+            display: inline-block;
+        }
+
+        .header__left--id {
+            margin-left: 5.2em;
+        }
+        
+        .header__right--serial {
+            margin-right: 6em;
+        }
+
+        .items__list {
+            width: 100%; 
+            padding-top: 1em;
+            border-bottom: 1px solid black;
+        }
+
+        .list--id {
+            width: 20%;
+            text-align: center;
+        }
+
+        .list--item {
+            width: 50%;
+            padding-left: 2em;
+        }
+
+        .item--description {
+            font-size: 10px;
+        }
+
+        .list--serial {
+            width: 30%;
+        }
+
+        .serial {
+            border: 1px solid;
+            width: 65%;
+            height: 2em;
+            margin-left: 1.4em;
+            box-shadow: 2px 3px rgb(237, 237, 237);
+        }
+
+        .list--space {
+            height: 1em;
+        }   
+
+        .conduce__entrega {
+            width: 100%;
+            padding: 2em .5em 1em .5em;
+        }
+
+        .hora--salida {
+            width: 2%;
+        }
+
+        .hora--entrega {
+            width: 5%;
+            padding-left: 2em;
+        }
+
+        .entrega--space {
+            height: 1.8em;
+        }   
+
+        .recibidor {
+            padding-left: 2em;
+        }
+
+        .write-line {
+            border-bottom: 1px solid black;
+            width: 8%;
+        }
+
+        .conduce__comentarios {
+            margin-top: 2em;
+        }
+
+        .comentarios--header {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 16px;
+            margin-left: 1.6em;
+            font-weight: bold;
+        }
+
+        .comentarios--box {
+            width: 95%;
+            height: 10%;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        @media print {
+            .list__item,
+            .list--space,
+            .conduce__entrega,
+            .conduce__comentarios {
+                page-break-inside: avoid;
+            }
+
+            .footer {
+                margin-top: 1em;
+                margin-left: 600px;
+                font-size: 10px;
+            }
+            
+        }
+    </style>
+
+</head>
+
+<body>    
+    <header class="conduce__header">
+        <img class="header__logo" src="http://res.cloudinary.com/rfig081/image/upload/v1525537325/LOGO_igswbw.png" alt="Super Mueblicentro, Inc">
+        <section class="header__info">
+            <div class="info--conduce-id"><b>Conduce:</b> <%= conduce_id %></div>
+
+            <div class="info--address">
+                <%= direccion.nombre %> <br>
+                <%= direccion.nombre %> <br>
+                <%= direccion.nombre %>, <%= direccion.nombre %> <%= direccion.nombre %> <br>
+                <%= direccion.nombre %>
+            </div>
+
+            <div class="info--empleado">                
+                <b>Empleado:</b> <%= empleado.nombre %> <%= empleado.apellidos %></b>
+            </div>
+        </section>
+    </header>
+
+    <section class="conduce__info-cliente">
+        <div class="info-cliente--direccion">
+            <b>Entregar a:</b> <br>
+            <span><%= cliente.nombre %> <%= cliente.apellidos %></span> <br> 
+            <%= cliente.direccion.nombre %> <%= cliente.direccion.nombre %>, <%= cliente.direccion.nombre %> <%= cliente.direccion.nombre %>
+        </div>
+
+        <div class="info-cliente--contactos">
+            <div class="contactos--telefono"><b>Teléfono:</b> <%= cliente.telefono %></div>
+            <div class="contactos--email"><b>Correo Electrónico:</b> <%= cliente.email %></div>
+        </div>
+    </section>
+
+    <section class="conduce__items">
+        <div class="items__header">
+            <div class="header__left">
+                <div class="header__left--id">ID</div>
+                <div class="header__left--item">Artículo</div>
+            </div>
+
+            <div class="header__right">
+                <div class="header__right--serial">Serial Number</div>
+            </div>
+        </div>
+
+        <table class="items__list">
+            <% for(let i=0; i < carrito.length; i++) { %>
+                <tr class="list__item">
+                    <td class="list--id">
+                        <%= carrito[i].id %>
+                    </td>
+                    <td class="list--item">
+                        <b><%= carrito[i].marca %></b> - <i><%= carrito[i].modelo %></i> <br>
+                        <span class="item--description"><%= carrito[i].descripcion %></span>
+                    </td>
+                    <td class="list--serial">
+                        <div class="serial"></div>
+                    </td>
+                </tr>
+                <tr class="list--space"></tr>
+            <% } %>
+        </table>
+    </section>  
+    
+    <table class="conduce__entrega">
+        <tr>
+            <td class="hora--salida"><b>Hora de Salida:</b></td>
+            <td class="write-line"></td>
+            <td class="hora--entrega"><b>Hora de Entrega:</b></td>
+            <td class="write-line"></td>
+        </tr>
+
+        <tr class="entrega--space"></tr>
+
+        <tr>
+            <td><b>Entregador:</b></td>
+            <td class="write-line"></td>
+            <td class="recibidor"><b>Recibidor Conforme:</b></td>
+            <td class="write-line"></td>
+        </tr>
+    </table>
+
+    <section class="conduce__comentarios">
+        <div class="comentarios--header">Comentarios sobre el servicio:</div>
+        <div class="comentarios--box"></div>
+    </section>
+
+    <section class="footer">
+        <i><b>Conduce:</b> <%= conduce_id %></i>
+    </section>
+</body>
+
+</html>
