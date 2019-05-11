@@ -1,6 +1,8 @@
 import printPDF from './index'
 import path from 'path'
+import fs from 'fs'
 
+const dir = './temp'
 const template = './templates/invoiceCredito.ejs'
 const css = {path:'./templates/ic.css'}
 const options = {
@@ -11,7 +13,7 @@ const options = {
         left: '14px',
         right: '14px',
     },
-    path: path.resolve('pdf', 'example2.pdf')
+    path: path.resolve('temp', 'example2.pdf')
 }
 const data = {
     id: '32714',
@@ -154,6 +156,10 @@ const data = {
     total: '$999.99',
 
     mensaje: '¿Dime socio quien tu eres?'
+}
+
+if(!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
 }
 
 printPDF(template, css, data, options)
