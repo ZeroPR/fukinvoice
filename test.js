@@ -1,6 +1,7 @@
 const printPDF = require('./index.js')
 const path = require('path')
 
+const dir = './temp'
 const template = './templates/invoiceCredito.ejs'
 const css = {path:'./templates/ic.css'}
 const options = {
