@@ -1,5 +1,5 @@
-import printPDF from './index'
-import path from 'path'
+const printPDF = require('./index.js')
+const path = require('path')
 
 const template = './templates/invoiceCredito.ejs'
 const css = {path:'./templates/ic.css'}
@@ -11,17 +11,7 @@ const options = {
         left: '14px',
         right: '14px',
     },
-    path: path.resolve('pdf', 'example2.pdf'),
-    displayHeaderFooter: true,
-    footerTemplate: `
-        <html>
-        <body>
-            <div>
-                <span class="pageNumber"></span>
-            </div>
-        </body>
-        </html>    
-`
+    path: path.resolve('pdf', 'example2.pdf')
 }
 const data = {
     id: '32714',
@@ -166,11 +156,8 @@ const data = {
     mensaje: '¿Dime socio quien tu eres?'
 }
 
-printPDF(template, css, data, options)
-.then(r => {
-    console.log(r)
-    process.exit()
-})
-.catch(err => {
-    console.log(err)
-})
+printPDF(template, css, data, options).then(
+    f => {
+        console.log(f)
+    }
+)

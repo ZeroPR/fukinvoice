@@ -1,21 +1,15 @@
 {
   "name": "fukinvoice",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Invoice Generator",
   "main": "index.js",
   "author": "Codetaku",
   "license": "MIT",
   "scripts": {
-    "test": "babel-node test.js"
+    "test": "node test.js"
   },
   "dependencies": {
     "ejs": "^2.6.1",
     "puppeteer": "^1.15.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.4"
   }
 }
