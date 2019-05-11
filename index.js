@@ -3,7 +3,7 @@ const fs = require('fs')
 const ejs = require('ejs')
 
 async function printPDF(template, css=null, data, optionsPDF) {
-    const browser = await puppeteer.launch({headless: true})
+    const browser = await puppeteer.launch({headless: true, ignoreDefaultArgs: ['--disable-extensions']})
     const page = await browser.newPage()
 
     let html_str = fs.readFileSync(template)
